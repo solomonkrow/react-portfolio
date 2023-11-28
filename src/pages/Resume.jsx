@@ -12,8 +12,8 @@ export default function Resume() {
       <p>
         download <span>my resume</span>
       </p>
-      <div>
-        <h4>Front-End Skills</h4>
+      <div className='my-5'>
+        <h4>Front-End Proficiencies</h4>
         <hr />
         <ul style={styles.text}>
           <li>HTML/CSS</li>
@@ -23,8 +23,8 @@ export default function Resume() {
           <li>jQuery</li>
         </ul>
       </div>
-      <div>
-        <h4>Back-End Skills</h4>
+      <div className='my-5'>
+        <h4>Back-End Proficiencies</h4>
         <hr />
         <ul style={styles.text}>
           <li>Nodejs</li>

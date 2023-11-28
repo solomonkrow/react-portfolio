@@ -2,37 +2,40 @@ import { useState } from "react";
 import { validateEmail } from "../utils/helpers";
 import "../styles/Pages.css";
 
-export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+const Contact = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleInputChange = (event) => {
-    const { target } = event;
-    const inputType = target.name;
-    const inputValue = target.value;
+  const [formStatus, setStatus] = useState('Send');
 
-    if (inputType === "name") {
-      setName(inputValue);
-    } else if (inputType === "email") {
-      setEmail(inputValue);
-    } else {
-      setMessage(inputValue);
-    }
-  };
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('Sending...');
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
+    const { name, email, message } = e.target.elements;
+    let details = {
+      name: name.value,
+      email: email.value,
+      message: message.value,
+    };
 
-    if (!validateEmail(email)) {
+    /* let response = await fetch('http://localhost:3000/contact', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+        "Access-Control-Allow-Origin" : "*", 
+        "Access-Control-Allow-Credentials" : true 
+      },
+      body: JSON.stringify(details),
+    }); */
+if (!validateEmail(email)) {
       setErrorMessage("Invalid Email");
       return;
     }
+    setStatus('Submitted');
+    // let result = await response.json();
+    // alert(result.status);
 
-    setName("");
-    setEmail("");
-    setMessage("");
+    
   };
 
   return (
@@ -46,10 +49,10 @@ export default function Contact() {
             Name :
           </label>
           <input
-            value={name}
             className="form-control"
-            onChange={handleInputChange}
             type="text"
+            id="name"
+            required
             placeholder="Name"
           />
         </div>
@@ -58,10 +61,10 @@ export default function Contact() {
             Email :
           </label>
           <input
-            value={email}
             className="form-control"
-            onChange={handleInputChange}
             type="email"
+            id="email"
+            required
             placeholder="Email Address"
           />
         </div>
@@ -70,9 +73,9 @@ export default function Contact() {
             Message :
           </label>
           <textarea
-            value={message}
             className="form-control"
-            onChange={handleInputChange}
+            id="message"
+            required
             rows={'7'}
             >
             </textarea>
@@ -82,14 +85,15 @@ export default function Contact() {
             <p className="error-text my-3">{errorMessage}</p>
           </div>
         )}
-        <div className="">
           <button className="btn btn-lg" type="submit">
-            Submit
+            {formStatus}
           </button>
-        </div>
+        
       </form>
         </div>
       
     </section>
   );
-}
+} 
+
+export default Contact;
