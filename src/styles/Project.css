@@ -1,0 +1,15 @@
+.card-img-top{
+    width: 100%;
+}
+
+.project-title {
+    color: gold;
+}
+
+.card-img-overlay a {
+    color: gold;
+}
+
+.card-img-overlay a:hover {
+    color: aqua;
+}

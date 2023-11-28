@@ -1,0 +1,26 @@
+.profile-pic {
+    width: 100%;
+    border: 5px #14303a solid;
+    border-radius: 180px;
+}
+
+input {
+    border: 5px #14303a solid;
+}
+
+.btn {
+    background-color: gold;
+}
+
+.btn:hover {
+    background-color: aqua;
+}
+
+.about-me{
+    border: 4px solid #14303a;
+}
+
+.card-title {
+    color: #14303a;
+}
+

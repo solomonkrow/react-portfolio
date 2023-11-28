@@ -1,0 +1,47 @@
+.nav-image {
+    background-image: url('../assets/pink_lotus.jpg');
+    background-size: cover;
+    position: 2000px 1000px;
+    width: 100%;
+}
+
+.navbar-brand {
+    color: gold;
+    font-size: 30px;
+}
+
+.navbar-brand:hover {
+    color: aqua;
+}
+
+.nav-link {
+    color: gold;
+    font-size: large;
+}
+
+.nav-link:hover {
+    color: aqua
+}
+
+.navbar-nav .nav-link.active {
+    color: aqua;
+}
+
+.navbar-nav a{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.footer-git a {
+    size: 0px;
+    color: gold;
+    text-decoration: none;
+}
+
+.d-flex a {
+    color: gold;
+}
+
+.d-flex a:hover {
+    color: aqua;
+}

@@ -1,17 +1,31 @@
-// This is a static page mocking an "About Us" section for our fake user data
+import face from "../assets/face.jpg";
+import "../styles/Pages.css";
+
 export default function About() {
-    return (
-      <div className="container pt-4">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-          tenetur maiores, dolor iusto dolorum ullam, natus deleniti blanditiis
-          impedit suscipit sed magnam alias in, repellat expedita hic explicabo
-          architecto soluta. About us Lorem ipsum, dolor sit amet consectetur
-          adipisicing elit. Velit voluptate exercitationem quaerat pariatur
-          mollitia, excepturi, voluptatem eveniet a dolor nobis ex veniam totam
-          nostrum temporibus ad omnis nam rerum eligendi.
-        </p>        
-      </div>
-    );
+  const styles = {
+    card: {
+      backgroundColor: 'gold'
+    }
   }
-  
+  return (
+    <section className="container pt-4 mx-auto ">
+      <div className="card mb-5 about-me" style={styles.card}>
+        <div className="row">
+          <div className="col-md-3">
+            <img src={face} className="img-fluid" alt="..." />
+          </div>
+
+          <div className="col">
+            <div className="card-body m-4 ">
+              <h5 className="card-title mb-4 ">About Me</h5> <hr />
+              <p className="card-text">
+                Junior full-stack developer
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
